@@ -1,4 +1,5 @@
 import '../src/styles/tailwind.css'
+import '../src/styles/variables.css'
 
 import type { Preview } from '@storybook/react-vite'
 

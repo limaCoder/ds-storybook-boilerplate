@@ -92,13 +92,12 @@ export default [
     }
   },
   //  {
-  //   // entrada só para o CSS stub
-  //   input: "src/styles/tailwind.ts",
+  //   input: "src/styles/variables.css",
   //   plugins: [
-  //     postcss({
-  //       extract: "styles.css", // gera dist/styles.css
-  //       minimize: true,
-  //       // você pode passar plugins se quiser (autoprefixer via postcss.config.js)
+  //     copy({
+  //       targets: [
+  //         { src: 'src/variables.css', dest: 'dist' }
+  //       ],
   //     }),
   //   ],
   //   // precisamos de um output JS (stub) — pode apontar pro dist
@@ -107,11 +106,10 @@ export default [
   //     format: "esm"
   //   }
   // },
-  // {
-  //   input: "src/styles/tailwind.css",
-  //   plugins: [postcss(), css({ output: "styles.css" })],
-  //   output: [{ file: "dist/styles.css", format: "esm" }]
-  // }
+  {
+    input: "src/styles/variables.css",
+    plugins: [postcss(), css({ output: "variables.css" })],
+  }
   // {
   //   input: 'src/styles/tailwind.css',
   //   output: [{ file: "dist/styles.css", format: "esm" }],

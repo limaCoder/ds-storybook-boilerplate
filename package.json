@@ -73,10 +73,10 @@
       "import": "./dist/styles.css",
       "require": "./dist/styles.css"
     },
-    "./button": {
-      "import": "./dist/esm/packages/button.js",
-      "require": "./dist/cjs/packages/button.js",
-      "types": "./dist/packages/button.d.ts"
+    "./accordion": {
+      "import": "./dist/esm/packages/accordion.js",
+      "require": "./dist/cjs/packages/accordion.js",
+      "types": "./dist/packages/accordion.d.ts"
     }
   }
 }

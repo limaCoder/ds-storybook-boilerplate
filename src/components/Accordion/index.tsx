@@ -1,3 +1,6 @@
+import '../../styles/tailwind.css'
+import '../../styles/variables.css'
+
 import { AccordionRoot } from './components/AccordionRoot';
 import { AccordionItem } from './components/AccordionItem';
 import { AccordionTrigger } from './components/AccordionTrigger';

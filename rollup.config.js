@@ -49,6 +49,11 @@ export default [
         include: ["**/*.ttf"],
       }),
       postcss(),
+      copy({
+        targets: [
+          { src: 'src/styles/tailwind-theme.css', dest: 'dist', rename: 'styles.css' }
+        ]
+      }),
     ],
     output: [
       {
@@ -109,17 +114,5 @@ export default [
   {
     input: "src/styles/variables.css",
     plugins: [postcss(), css({ output: "variables.css" })],
-  }
-  // {
-  //   input: 'src/styles/tailwind.css',
-  //   output: [{ file: "dist/styles.css", format: "esm" }],
-  //   plugins: [
-  //     css({ output: 'styles.css' }),
-  //     // copy({
-  //     //   targets: [
-  //     //     { src: 'src/output.css', dest: 'dist' }
-  //     //   ],
-  //     // }),
-  //   ],
-  // }
+  },
 ];

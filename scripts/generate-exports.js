@@ -13,10 +13,7 @@ const files = fs.readdirSync(srcDir)
   .filter(f => f.endsWith('.ts') && !ignore.includes(f));
 
 const exportsField = {
-  "./styles.css": {
-    "import": "./dist/styles.css",
-    "require": "./dist/styles.css"
-  },
+  "./styles.css": "./dist/styles.css",
 };
 
 files.forEach(f => {
@@ -32,18 +29,18 @@ fs.readFile(packageJsonPath, "utf-8", (err, data) => {
   if (err) {
     console.error("\x1b[31m%s\x1b[0m", "Erro ao ler o arquivo:", err);
   } else {
-     const json = JSON.parse(data);
-     json.exports = exportsField
+    const json = JSON.parse(data);
+    json.exports = exportsField
 
-     const addExports = JSON.stringify(json, null, 2);
+    const addExports = JSON.stringify(json, null, 2);
 
-     fs.writeFile(packageJsonPath, addExports, "utf-8", (err) => {
-       if (err) {
-         console.error("\x1b[31m%s\x1b[0m", "Erro ao escrever no arquivo:", err);
-       } else {
-         console.log("\x1b[32m%s\x1b[0m", `O campo "exports" foi atualizado com sucesso`);
-       }
-     });
+    fs.writeFile(packageJsonPath, addExports, "utf-8", (err) => {
+      if (err) {
+        console.error("\x1b[31m%s\x1b[0m", "Erro ao escrever no arquivo:", err);
+      } else {
+        console.log("\x1b[32m%s\x1b[0m", `O campo "exports" foi atualizado com sucesso`);
+      }
+    });
   }
 })
 
